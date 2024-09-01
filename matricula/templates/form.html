@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>METODO FUNCINOU</h1>
-    <form>
-        {% csrf_token %}
-        {{ form }}
-    </form>
+    <div class="container">
+        <h1>Cadastro de alunos</h1>
+        <form>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 </body>
 </html>
